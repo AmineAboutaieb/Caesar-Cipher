@@ -3,7 +3,7 @@ alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q",
 
 message = "The river of sbou is passing and berries are growing on the floor"
 
-num_step = 8
+num_step = 3
 
 
 def cipher(message):
