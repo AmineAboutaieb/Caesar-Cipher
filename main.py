@@ -38,8 +38,8 @@ def decipher(cipher, step):
 
 ciphered_message = cipher(message)
 
-print(ciphered_message)
+print("Ciphered message", ciphered_message)
 
 deciphered = decipher(ciphered_message, num_step)
 
-print(deciphered)
+print("Deciphered message", deciphered)
