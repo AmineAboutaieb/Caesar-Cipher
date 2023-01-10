@@ -16,6 +16,8 @@ def cipher(message):
                 new_step = (letter_index - num_step) * -1
                 shifted_index = len(alphabet) - new_step
                 cipher += alphabet[shifted_index]
+        elif letter == ' ':
+            cipher += ' '
 
     return cipher
 
@@ -23,12 +25,15 @@ def cipher(message):
 def decipher(cipher):
     message = ""
     for letter in cipher:
-        letter_index = alphabet.index(str.lower(letter))
-        if letter_index + num_step > len(alphabet) - 1:
-            deciphered_index = ((letter_index + num_step) - len(alphabet))
-            message += alphabet[deciphered_index]
-        else:
-            deciphered_index = letter_index + num_step
-            message += alphabet[deciphered_index]
+        if letter.isalpha():
+            letter_index = alphabet.index(str.lower(letter))
+            if letter_index + num_step > len(alphabet) - 1:
+                deciphered_index = ((letter_index + num_step) - len(alphabet))
+                message += alphabet[deciphered_index]
+            else:
+                deciphered_index = letter_index + num_step
+                message += alphabet[deciphered_index]
+        elif letter == ' ':
+            message += ' '
 
     return message
